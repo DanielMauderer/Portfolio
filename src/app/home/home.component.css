@@ -1,0 +1,21 @@
+:host {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+    width: 50%;
+    margin: 15% auto auto auto;
+    .divider{
+        margin: 1rem 0;
+        border: 1px solid #fff;
+        height: 100%;
+        margin: 16px;
+    }
+}
+

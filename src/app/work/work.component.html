@@ -1,0 +1,22 @@
+<p-timeline
+  [value]="workPlaces"
+  align="alternate"
+  styleClass="customized-timeline"
+>
+  <ng-template pTemplate="marker" let-workPlace>
+    <span
+      class="flex w-2rem h-2rem align-items-center justify-content-center text-white border-circle z-1 shadow-1"
+      [style]="{ 'background-color': workPlace.color }"
+    >
+      <i [class]="workPlace.icon"></i>
+    </span>
+  </ng-template>
+  <ng-template pTemplate="content" let-workPlace>
+    <p-card
+      [header]="workPlace.title"
+      [subheader]="duration(workPlace.startDate, workPlace.endDate)"
+    >
+      <p>{{ workPlace.description }}</p>
+    </p-card>
+  </ng-template>
+</p-timeline>

@@ -1,0 +1,25 @@
+<main>
+  @for (project of projects; track $index) {
+  <p-card header="{{ project.title }}" [style]="{ width: '360px' }">
+    <ng-template pTemplate="header">
+      <img alt="Card" src="../assets/project-images/{{ project.image }}" />
+    </ng-template>
+    <ng-template pTemplate="subHeader">
+      @for (tech of project.technologies; track $index) {
+      <p-tag value="{{ tech }}" />
+
+      }
+    </ng-template>
+    <p>{{ project.description }}</p>
+    <ng-template pTemplate="footer">
+      <div class="flex gap-3 mt-1">
+        <p-button
+          label="show full blog post"
+          class="w-full"
+          styleClass="w-full"
+        />
+      </div>
+    </ng-template>
+  </p-card>
+  }
+</main>

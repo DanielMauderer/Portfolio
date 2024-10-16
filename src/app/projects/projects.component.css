@@ -1,0 +1,11 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p-card{
+        padding: 0 8px;
+        p-tag{
+            padding: 0 2px;
+        }
+    }
+}
