@@ -1,23 +1,40 @@
-main{
+main {
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 8px;
-    p-card{
+
+    p-card {
         padding: 0 8px;
-        .tags{
+
+        .tags {
             display: flex;
             flex-direction: column;
             gap: 8px;
-            .tagRow{
+
+            .tagRow {
                 display: flex;
                 gap: 4px;
                 flex-wrap: wrap;
-                p-tag{
+
+                p-tag {
                     padding: 0 2px;
                 }
             }
         }
     }
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    padding: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0;
 }

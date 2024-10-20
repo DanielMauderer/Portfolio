@@ -28,12 +28,10 @@
     </ng-template>
     <p>{{ project.description }}</p>
     <ng-template pTemplate="footer">
-      <div class="flex gap-3 mt-1">
-        <p-button
-          label="show full blog post"
-          class="w-full"
-          styleClass="w-full"
-        />
+      <div class="card-footer">
+        <p-button label="show full blog post" class="w-full" styleClass="w-full" />
+        <a class="pi pi-github" style="font-size: 2rem" href="{{ project.githubLink }}">
+        </a>
       </div>
     </ng-template>
   </p-card>
