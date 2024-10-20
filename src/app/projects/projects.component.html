@@ -1,14 +1,30 @@
 <main>
   @for (project of projects; track $index) {
-  <p-card header="{{ project.title }}" [style]="{ width: '360px' }">
+  <p-card header="{{ project.title }}" [style]="{ width: '25vw' }">
     <ng-template pTemplate="header">
       <img alt="Card" src="../assets/project-images/{{ project.image }}" />
     </ng-template>
     <ng-template pTemplate="subHeader">
-      @for (tech of project.technologies; track $index) {
-      <p-tag value="{{ tech }}" />
+      <div class="tags">
+        <div class="tagRow">
+          @for (tech of project.languages; track $index) {
+          <p-tag value="{{ tech }}" />
 
-      }
+          }
+        </div>
+        <div class="tagRow">
+          @for (tech of project.technologies; track $index) {
+          <p-tag value="{{ tech }}" />
+
+          }
+        </div>
+        <div class="tagRow">
+          @for (tech of project.other; track $index) {
+          <p-tag value="{{ tech }}" />
+
+          }
+        </div>
+      </div>
     </ng-template>
     <p>{{ project.description }}</p>
     <ng-template pTemplate="footer">
