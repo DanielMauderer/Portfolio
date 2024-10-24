@@ -14,13 +14,13 @@
         </div>
         <div class="tagRow">
           @for (tech of project.technologies; track $index) {
-          <p-tag value="{{ tech }}" />
+          <p-tag value="{{ tech }}" severity="info" />
 
           }
         </div>
         <div class="tagRow">
           @for (tech of project.other; track $index) {
-          <p-tag value="{{ tech }}" />
+          <p-tag value="{{ tech }}" severity="secondary" />
 
           }
         </div>
@@ -29,8 +29,16 @@
     <p>{{ project.description }}</p>
     <ng-template pTemplate="footer">
       <div class="card-footer">
-        <p-button label="show full blog post" class="w-full" styleClass="w-full" />
-        <a class="pi pi-github" style="font-size: 2rem" href="{{ project.githubLink }}">
+        <p-button
+          label="show full blog post"
+          class="w-full"
+          styleClass="w-full"
+        />
+        <a
+          class="pi pi-github"
+          style="font-size: 2rem"
+          href="{{ project.githubLink }}"
+        >
         </a>
       </div>
     </ng-template>
