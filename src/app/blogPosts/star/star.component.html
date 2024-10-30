@@ -1,0 +1,42 @@
+<main>
+  <div class="card flex justify-content-center">
+    <p-panel>
+      <ng-template pTemplate="header">
+        <div class="headerContainer">
+          <h1>Stars</h1>
+          <div class="tags">
+            <div class="tagRow">
+              <p-tag value="rust" />
+              <p-tag value="c" />
+            </div>
+            <div class="tagRow">
+              <p-tag value="OpenCL" severity="info" />
+            </div>
+            <div class="tagRow">
+              <p-tag value="OpenCL - GPU" severity="secondary" />
+              <p-tag value="SIMD" severity="secondary" />
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <h3>Overview</h3>
+      <p>
+        This project is a simple point generator to learn some SIMD and OpenCL
+        programming. A friend of mine is learning programming and writes a small
+        space strategy game. For this game he needs to generate a large number
+        of points. I thought it would be a good idea to write a small program
+        that generates these points to learn SIMD and GPU programming.
+      </p>
+      <p>
+        The program generates the points with an expotential distribution
+        distance to the center. For easy generation points are generated in a
+        spherical coordinate system. And for later computation converted to
+        Cartesian coordinates.
+      </p>
+      <p-divider />
+      <h3>Point generation</h3>
+      <pre><code [highlight]="code" language="rust" lineNumbers>
+      </code></pre>
+    </p-panel>
+  </div>
+</main>

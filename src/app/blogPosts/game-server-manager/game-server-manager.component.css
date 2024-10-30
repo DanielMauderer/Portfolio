@@ -1,0 +1,44 @@
+:host {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+
+main {
+    width: 100%;
+}
+
+a {
+    padding: 1rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem;
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
+    .tagRow {
+        display: flex;
+        gap: 4px;
+        flex-wrap: wrap;
+
+        p-tag {
+            padding: 0 2px;
+        }
+    }
+}
+
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+}
