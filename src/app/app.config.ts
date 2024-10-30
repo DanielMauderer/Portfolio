@@ -20,7 +20,7 @@ export const appConfig: ApplicationConfig = {
         json: () => import('highlight.js/lib/languages/json'),
         xml: () => import('highlight.js/lib/languages/xml')
       },
-      themePath: 'assets/styles/androidstudio.css'
+      themePath: 'assets/styles/stackoverflow-dark.css'
     })
   ]
 };

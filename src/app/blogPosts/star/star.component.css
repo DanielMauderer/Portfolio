@@ -1,12 +1,13 @@
 :host {
     display: flex;
-    height: 100%;
     width: 100%;
+    justify-content: center;
     flex-direction: column;
 }
 
 main{
-    width:100%;
+    width: 90%;
+    margin: 16px auto 0 auto;
 }
 
 a {

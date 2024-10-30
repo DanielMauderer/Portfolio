@@ -35,8 +35,21 @@
       </p>
       <p-divider />
       <h3>Point generation</h3>
-      <pre><code [highlight]="code" language="rust" lineNumbers>
-      </code></pre>
+      <p>
+        Every point has Theta Phi and a radius. Both the radius and phi are
+        genenerated with a expotential distribution. The Sign of phi is randomly
+        flipped to get a angle between -PI and PI. The Theta is generated with a
+        uniform distribution. To convert the spherical coordinates to cartesian
+        coordinates the following formulas are used:
+      </p>
+      <pre><code [highlightAuto]="code" lineNumbers></code></pre>
+
+      <p-divider />
+      <h3>Single instruction multiple data</h3>
+      <p-divider />
+      <h3>GPU accelerated</h3>
+      <img src="assets/project-images/gpu-flow.svg" alt="Star" />
+      <p>asdasd</p>
     </p-panel>
   </div>
 </main>
