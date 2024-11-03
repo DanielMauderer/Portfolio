@@ -21,7 +21,56 @@
           </div>
         </div>
       </ng-template>
-      <p>Lorem ipsum dolor sit amet...</p>
+      <h3>Introduction</h3>
+      <p>
+        The Gameserver Manager is a project that I started to manage my game
+        servers. At that time I had a few game servers running on a dedicated
+        server. I wanted to give easy access to me and my friends to start,
+        stop, and backup these servers. To accive this the nodes create a
+        different docker container for each game server. This allows for easy
+        resource management and backup creation.
+      </p>
+      <p>
+        This project can be split into three sections. The website that is
+        delivered to the client. A REST-API that is used by the website to
+        communicate to the nodes. And the nodes that are connected with the
+        local docker daemon to manage the game servers containers. The api can
+        connect to multiple nodes this allows for easy horizontal scaling of the
+        system.
+      </p>
+      <p-divider />
+      <h3>Architecture</h3>
+      <img
+        src="assets/project-images/GSM-architekture.svg"
+        alt="Star"
+        style="width: 30%"
+      />
+      <p>
+        The website is build with Vue and TypeScript. The design is keeped very
+        simple to allow for easy use. It requests all data from the REST-API
+        that is build with ASP.Net. The API handles user permissions and hides
+        the nodes from the client. The nodes are build with C# and use gRPC to
+        communicate with the API. Each node needs to have docker running to host
+        the game servers.
+      </p>
+      <pre><code [highlight]="proto" language="protobuf" lineNumbers></code></pre>
+      <p>
+        This Code snippet shows the proto file that is used to generate the gRPC
+        code. These file defines all functions that are used to control and
+        fetch data from the nodes. With Get and GetAll the API can gather all
+        servers running on that node.
+      </p>
+      <pre><code [highlight]="importMessage" language="protobuf" lineNumbers></code></pre>
+      <p>
+        The Code above shows the Type used by the Import function. The Import
+        function creates a new
+      </p>
+      <p>
+        The Start, Stop and Update functions are used to controlle the
+        container. When creating the container it is possible to define a start,
+        stop and update bash script. These scripts are executed when the API
+        calls the corresponding function.
+      </p>
     </p-panel>
   </div>
 </main>

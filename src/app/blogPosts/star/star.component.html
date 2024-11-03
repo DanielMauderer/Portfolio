@@ -33,6 +33,13 @@
         spherical coordinate system. And for later computation converted to
         Cartesian coordinates.
       </p>
+      <p>
+        I tried to optimize this problem in three steps. The first one is a
+        simple sequential implementation as a benchmark for the other two
+        implementations. The second one uses SIMD instructions to calculate
+        multiple points at once. The third one uses OpenCL to calculate all the
+        points simultaneous on the GPU.
+      </p>
       <p-divider />
       <h3>Point generation</h3>
       <p>
@@ -42,14 +49,39 @@
         uniform distribution. To convert the spherical coordinates to cartesian
         coordinates the following formulas are used:
       </p>
-      <pre><code [highlightAuto]="code" lineNumbers></code></pre>
+      <pre><code [highlightAuto]="coordinateConversion" lineNumbers></code></pre>
 
       <p-divider />
       <h3>Single instruction multiple data</h3>
+      <p>
+        The SIMD implementation is very similar to the sequential
+        implementation. The Points are generated in batches, depending on the
+        CPU.
+      </p>
+      <pre><code [highlightAuto]="simdDefinition" lineNumbers></code></pre>
+      <p>
+        The code defines three vectors each vector holds one part of the
+        coordinates. The f32x64 type holds 64 32bit floating point numbers. This
+        makes it possible to calculate 64 points at once.
+      </p>
       <p-divider />
       <h3>GPU accelerated</h3>
+      <p>
+        To calculate the points effitiently using the GPU I changed the flow how
+        I generate the points.
+      </p>
       <img src="assets/project-images/gpu-flow.svg" alt="Star" />
-      <p>asdasd</p>
+      <p>
+        To minimize the data transfer between the CPU and the GPU a seed vector
+        is generated. Each seed belongs to a different point. With this seed the
+        GPU generates random starting points for the radius, Theta and Phi.
+      </p>
+      <pre><code [highlight]="openClKernel" language="c" lineNumbers></code></pre>
+      <p>
+        The majority of the time is spent allocating the memory and copying the
+        data to and from the GPU. Because the calculation is very simple
+        compared to the amount of data produced this is expected.
+      </p>
     </p-panel>
   </div>
 </main>

@@ -15,6 +15,7 @@ export const appConfig: ApplicationConfig = {
       lineNumbersLoader: () => import('ngx-highlightjs/line-numbers'),
       coreLibraryLoader: () => import('highlight.js/lib/core'),
       languages: {
+        protobuf: () => import('highlight.js/lib/languages/protobuf'),
         rust: () => import('highlight.js/lib/languages/rust'),
         c: () => import('highlight.js/lib/languages/c'),
         json: () => import('highlight.js/lib/languages/json'),
