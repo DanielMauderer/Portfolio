@@ -23,20 +23,21 @@
       </ng-template>
       <h3>Introduction</h3>
       <p>
-        The Gameserver Manager is a project that I started to manage my game
-        servers. At that time I had a few game servers running on a dedicated
-        server. I wanted to give easy access to me and my friends to start,
-        stop, and backup these servers. To accive this the nodes create a
-        different docker container for each game server. This allows for easy
-        resource management and backup creation.
+        The Gameserver Manager is a project I initiated to streamline the
+        management of my game servers. At the time, I had a few game servers
+        running on a dedicated server. I wanted to provide my colleagues and I
+        with convenient access to start, stop, and back up these servers. To
+        achieve this, the nodes create a separate Docker container for each game
+        server, enabling efficient resource management and backup creation.
       </p>
       <p>
-        This project can be split into three sections. The website that is
-        delivered to the client. A REST-API that is used by the website to
-        communicate to the nodes. And the nodes that are connected with the
-        local docker daemon to manage the game servers containers. The api can
-        connect to multiple nodes this allows for easy horizontal scaling of the
-        system.
+        This project can be divided into three key components: the website, a
+        REST API and the nodes. The website is delivered to the client and
+        serves as the primary interface for users. The REST API facilitates
+        communication between the website and the nodes. The Node enable the
+        management of game server containers through the local Docker daemon.
+        The API can connect to multiple nodes, allowing for seamless horizontal
+        scaling of the system.
       </p>
       <p-divider />
       <h3>Architecture</h3>
@@ -46,45 +47,45 @@
         style="width: 30%"
       />
       <p>
-        The website is build with Vue and TypeScript. The design is keeped very
-        simple to allow for easy use. It requests all data from the REST-API
-        that is build with ASP.Net. The API handles user permissions and hides
-        the nodes from the client. The nodes are build with C# and use gRPC to
-        communicate with the API. Each node needs to have docker running to host
-        the game servers.
+        The website is built with Vue and TypeScript. The design is kept simple
+        to facilitate ease of use. It requests all data from the REST API, which
+        is built with ASP.Net. The API handles user permissions and hides the
+        nodes from the client. The nodes are built with C# and use gRPC to
+        communicate with the API. Each node requires the installation of Docker
+        to host the game servers.
       </p>
       <pre><code [highlight]="proto" language="protobuf" lineNumbers></code></pre>
       <p>
-        This Code snippet shows the proto file that is used to generate the gRPC
-        code. These file defines all functions that are used to control and
-        fetch data from the nodes. With Get and GetAll the API can gather all
-        servers running on that node.
+        The following code snippet is an example of a proto file used to
+        generate gRPC code. These files define all functions required for
+        controlling and fetching data from the nodes. The Get and GetAll
+        functions enable the API to gather all servers running on a given node.
       </p>
       <pre><code [highlight]="importMessage" language="protobuf" lineNumbers></code></pre>
       <p>
-        The Code above shows the Type used by the Import function. The Import
-        function creates a new container and runs the installation script. Every
-        container has a mounted folder home/scripts. The node creates this
-        folder with bash files and copies the specified script content. With the
-        Import function the user can specify exposed ports a envirement
-        variables.
+        The code above shows the type used by the import function. The import
+        function creates a new container and runs the installation script. Each
+        container has a mounted folder, home/scripts, which is created by the
+        node with bash files and contains the specified script content. The user
+        can also specify exposed ports and environment variables using the
+        import function.
       </p>
       <p>
-        The Start, Stop and Update functions are used to controlle the
-        container. When creating the container it is possible to define a start,
-        stop and update bash script. These scripts are executed when the API
-        calls the corresponding function.
+        The Start, Stop and Update functions are used to control the container.
+        When creating the container, users can define a start, stop and update
+        bash script. These scripts are executed when the API calls the
+        corresponding function.
       </p>
       <p>
-        To retrieve the console output for the executed scripts the api can user
-        the GetLog and GetActiveLogs. GetLog returns all past logs for all
-        executed commands. GetActiveLogs returns only the the output for running
-        commands.
+        To retrieve the console output for the executed scripts, the API can
+        utilise the GetLog and GetActiveLogs functions. The GetLog function
+        returns all past logs for all executed commands, while the GetActiveLogs
+        function returns only the output for running commands.
       </p>
       <p>
-        With the functions Attach and SendCommand it is possible to open a
-        stream and interact with a running command. This allows the client to
-        have a console in the web interface.
+        The Attach and SendCommand functions enable users to open a stream and
+        interact with a running command, allowing them to access a console
+        within the web interface.
       </p>
     </p-panel>
   </div>
