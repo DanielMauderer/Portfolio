@@ -6,7 +6,7 @@ import { TagModule } from 'primeng/tag';
 @Component({
   selector: 'wilduhr',
   standalone: true,
-  imports: [PanelModule, TagModule],
+  imports: [PanelModule, TagModule, DividerModule],
   templateUrl: './wilduhr.component.html',
   styleUrl: './wilduhr.component.css'
 })

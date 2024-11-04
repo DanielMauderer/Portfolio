@@ -40,7 +40,11 @@
       </p>
       <p-divider />
       <h3>Architecture</h3>
-      <img src="assets/project-images/GSM-architekture.svg" alt="Star" style="width: 30%" />
+      <img
+        src="assets/project-images/GSM-architekture.svg"
+        alt="Star"
+        style="width: 30%"
+      />
       <p>
         The website is build with Vue and TypeScript. The design is keeped very
         simple to allow for easy use. It requests all data from the REST-API
@@ -59,10 +63,11 @@
       <pre><code [highlight]="importMessage" language="protobuf" lineNumbers></code></pre>
       <p>
         The Code above shows the Type used by the Import function. The Import
-        function creates a new container and runs the instalation script. Every
-        container has a mounted folder home/scripts. The node creates this folder with
-        bash files and copies the specified script content. With the Import function
-        the user can specify exposed ports a envirement variables.
+        function creates a new container and runs the installation script. Every
+        container has a mounted folder home/scripts. The node creates this
+        folder with bash files and copies the specified script content. With the
+        Import function the user can specify exposed ports a envirement
+        variables.
       </p>
       <p>
         The Start, Stop and Update functions are used to controlle the
@@ -71,12 +76,15 @@
         calls the corresponding function.
       </p>
       <p>
-        To retrive the console output for the executed scripts the api can user the GetLog and GetActiveLogs. GetLog
-        returns all past logs for all executed commands. GetActiveLogs returns only the the output for running commands.
+        To retrieve the console output for the executed scripts the api can user
+        the GetLog and GetActiveLogs. GetLog returns all past logs for all
+        executed commands. GetActiveLogs returns only the the output for running
+        commands.
       </p>
       <p>
-        With the functions Attach and SendCommand it is possible to open a stream and interact with a running command.
-        This allows the client to have a console in the web interface.
+        With the functions Attach and SendCommand it is possible to open a
+        stream and interact with a running command. This allows the client to
+        have a console in the web interface.
       </p>
     </p-panel>
   </div>
