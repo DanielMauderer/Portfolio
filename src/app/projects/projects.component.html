@@ -2,7 +2,11 @@
   @for (project of projects; track $index) {
   <p-card header="{{ project.title }}" [style]="{ width: '25vw' }">
     <ng-template pTemplate="header">
-      <img alt="Card" src="../assets/project-images/{{ project.image }}" />
+      <img
+        alt="Card"
+        src="../assets/project-images/{{ project.image }}"
+        style="background-color: #71717a; border-radius: 10px; padding: 8px"
+      />
     </ng-template>
     <ng-template pTemplate="subHeader">
       <div class="tags">
