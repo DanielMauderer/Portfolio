@@ -43,3 +43,13 @@ a {
     display: flex;
     flex-direction: column;
 }
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;    
+    img {
+        width: 50%;
+    }
+}
